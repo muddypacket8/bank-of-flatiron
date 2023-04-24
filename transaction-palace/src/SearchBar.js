@@ -3,9 +3,9 @@ import React, { useState } from "react";
 function SearchBar({ onSearchTransactions }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-//   const handleSearch = () => {
-//     onSearchTransactions(searchTerm);
-//   };
+  const handleSearch = () => {
+    onSearchTransactions(searchTerm);
+  };
 
   return (
     <div className="search-bar">

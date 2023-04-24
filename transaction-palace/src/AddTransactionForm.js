@@ -8,7 +8,7 @@ function AddTransactionForm({ onAddTransaction }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newTransaction = {
-      description,
+
       category,
       amount,
       date: new Date().toLocaleDateString(),

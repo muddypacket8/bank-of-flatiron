@@ -4,15 +4,14 @@ const TransactionsTable = () => {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    const fetchTransactions = async () => {
-      const res = await fetch('db.json');
-      const data = await res.json();
-      setTransactions(data.transactions);
-    };
-    fetchTransactions();
+    fetch('/http://localhost:8001/Transactions')
+      .then(response => response.json())
+      .then(data => setTransactions(data.transactions))
+      .catch(error => console.log(error));
   }, []);
 
   return (
+    
     <table>
       <thead>
         <tr>
@@ -22,7 +21,7 @@ const TransactionsTable = () => {
         </tr>
       </thead>
       <tbody>
-        {transactions.map((transaction, index) => (
+        {transactions && transactions.map((transaction, index) => (
           <tr key={index}>
             <td>{transaction.date}</td>
             <td>{transaction.description}</td>
