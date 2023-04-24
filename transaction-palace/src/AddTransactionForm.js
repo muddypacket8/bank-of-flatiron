@@ -54,6 +54,7 @@ function AddTransactionForm({ onAddTransaction }) {
       </form>
     </div>
   );
+
 }
 
 export default AddTransactionForm;
